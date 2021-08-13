@@ -1,8 +1,0 @@
-{
-  "editor.tabSize": 2,
-  "lint:css": "stylelint --syntax scss \"src/**/*.scss\"",
-    "lint": "yarn run lint:ts && yarn run lint:css",
-    "format:css": "stylelint --fix --syntax scss \"src/**/*.scss\"",
-    "format": "yarn run format:ts && yarn run format:css",
-    "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"]
-  }
