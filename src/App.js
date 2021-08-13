@@ -5,7 +5,7 @@ function App() {
   const today = new Date();
   return (
     <div className="container w-75">
-      <h1 className="mt-4 mb-4">Related Articles</h1>
+      <h1 className="mt-4 mb-4 text-danger">Related Articles</h1>
       <p className="mb-5">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit,
         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
