@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import './Card.scss';
 
 const Card = ({
@@ -6,18 +7,24 @@ const Card = ({
   date,
   description,
   text,
-  colorName,
 }) => {
   // Declare a new state variable, which we'll call "count"
   const [expanded, setExpanded] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  const mountedStyle = { opacity: 1, transition: 'opacity 1000ms ease-in' };
+  const unmountedStyle = { opacity: 0, transition: 'opacity 1000ms ease-in' };
 
   function toggleExpanded() {
     if (!expanded) setExpanded(true);
     else setExpanded(false);
   }
 
+  useEffect(() => {
+    setMounted(true);
+  });
+
   return (
-    <div className={`card bg-${colorName}`}>
+    <div className="card" style={mounted ? mountedStyle : unmountedStyle}>
       <div className="card-body d-flex flex-column">
         <h5 className="card-subtitle mb-3">
           { date ? `${date.getDate()} ${date.toLocaleString('default', { month: 'short' })}, ${date.getFullYear()}` : null}
@@ -33,18 +40,15 @@ const Card = ({
   );
 };
 Card.propTypes = {
-  title: String,
-  date: Date,
-  description: String,
-  text: String,
-  colorName: String,
+  title: PropTypes.string,
+  date: PropTypes.instanceOf(Date).isRequired,
+  description: PropTypes.string,
+  text: PropTypes.string,
 };
 Card.defaultProps = {
   title: '',
-  date: null,
   description: '',
   text: '',
-  colorName: '',
 };
 
 export default Card;

@@ -1,0 +1,19 @@
+.col {
+  &:nth-child(1n) {
+    .card {
+      background-color: #e99c43;
+    }
+  }
+
+  &:nth-child(2n) {
+    .card {
+      background-color: #64acd9;
+    }
+  }
+
+  &:nth-child(3n) {
+    .card {
+      background-color: #a379aa;
+    }
+  }
+}
