@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 // eslint-disable-next-line import/no-named-as-default
 import NewsService from '../../services/NewsService/NewsService';
 import Card from '../Card/Card';
-import Config from '../../config';
+
 import './Page.scss';
 
 const Page = () => {
@@ -11,7 +11,7 @@ const Page = () => {
   const [page, setPage] = useState(1);
 
   function getData() {
-    NewsService.getData(Config.API_KEY, 3, page).then((data) => {
+    NewsService.getData('b820c06a94354b5c861694e394534a78', 3, page).then((data) => {
       setNews([...news, ...data.articles]);
     });
   }
