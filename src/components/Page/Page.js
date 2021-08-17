@@ -11,7 +11,7 @@ const Page = () => {
   const [page, setPage] = useState(1);
 
   function getData() {
-    NewsService.getData('b820c06a94354b5c861694e394534a78', 3, page).then((data) => {
+    NewsService.getData('', 3, page).then((data) => {
       setNews([...news, ...data.articles]);
     });
   }
